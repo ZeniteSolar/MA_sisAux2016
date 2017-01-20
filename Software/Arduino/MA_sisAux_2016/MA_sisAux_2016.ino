@@ -28,7 +28,7 @@ typedef union estados_t {
 volatile estados_t estados;
 
 MCP_CAN CAN0(10);                               // Set CS to pin 10
-
+//MCP_CAN CAN(10);  //atente para o "CAN" em vez de "CAN0"
 
 void setup()
 {
@@ -36,7 +36,7 @@ void setup()
   pinMode(INTER, INPUT);   // Setting pin A0 for /INT input
   pinMode(BOMBA1, OUTPUT);
   pinMode(BOMBA2, OUTPUT);
-  CAN0.begin(CAN_125KBPS);                       // init can bus : baudrate = 500k
+  //CAN0.begin(CAN_125KBPS);                       // init can bus : baudrate = 500k
   while (CAN_OK != CAN0.begin(CAN_125KBPS)) {
     Serial.println("Falha na inicialização");
     Serial.println("Carregando...");
